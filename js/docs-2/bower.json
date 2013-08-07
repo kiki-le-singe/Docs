@@ -1,0 +1,21 @@
+{
+  "name": "Docs-2",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.0.0",
+    "jquery-ui": "latest",
+    "requirejs": "~2.1.8",
+    "requirejs-text": "~2.0.7",
+    "lodash": "~1.3.1",
+    "backbone.marionette": "~1.0.4",
+    "requirejs-tpl": "latest"
+  }
+}

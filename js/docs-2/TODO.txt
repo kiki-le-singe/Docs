@@ -1,0 +1,3 @@
+- Essayer d'éviter de requêté deux fois l'article.json, donc peut-être appeler articleView directement et pas articlesView. Donc faut passer la collection à la vue ArticleView et faire un this.collection.get(idArticle) dans la vue ArticleView.js
+
+Dans le router afficher le titre de l'article formatté blabla-blabla ??
