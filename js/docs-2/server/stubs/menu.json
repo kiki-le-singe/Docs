@@ -1,26 +1,30 @@
 [
   {
-    "id": 1,
     "title": "PHP",
-    "img_src": "images/menu/php.jpg",
-    "path": "php"
+    "imgSrc": "images/menu/php.jpg",
+    "path": "php",
+    "_id": "52151e31152118890b000001",
+    "__v": 0
   },
   {
-    "id": 2,
     "title": "Linux",
-    "img_src": "images/menu/linux.jpg",
-    "path": "linux"
+    "imgSrc": "images/menu/linux.jpg",
+    "path": "linux",
+    "_id": "52152592152118890b000002",
+    "__v": 0
   },
   {
-    "id": 3,
     "title": "GIT",
-    "img_src": "images/menu/git.jpg",
-    "path": "git"
+    "imgSrc": "images/menu/git.jpg",
+    "path": "git",
+    "_id": "521525b6152118890b000003",
+    "__v": 0
   },
   {
-    "id": 4,
     "title": "Symfony",
-    "img_src": "images/menu/symfony.jpg",
-    "path": "symfony"
+    "imgSrc": "images/menu/symfony.jpg",
+    "path": "symfony",
+    "_id": "521525ce152118890b000004",
+    "__v": 0
   }
 ]
