@@ -17,9 +17,13 @@ define([
 		},
 
 		render : function() {
+			// Récupération du model passé depuis,
+			// la fonction renderArticle dans views/article/ArticlesView.js
 			var article = this.options.article;
 
 			this.$el.html(this.template({
+				// Récupération et passage des attributs du model,
+				// au template article.tpl.
 				id : article.get('id'),
 				title : article.get('title'),
 				text : article.get('text')

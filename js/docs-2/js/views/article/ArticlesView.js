@@ -64,6 +64,10 @@ define([
 			var idArticle = this.options.id_article;
 
 			this.articleView = new ArticleView({
+				// Récupération du model par son id. Puis on le passe à la vue ArticleView().
+				// L'id provient de la bdd qui renvoie un attribut "_id",
+				// mais que l'ont parse dans le model d'un article, models/article/ArticleModel.js,
+				// car Backbone attends un attribut "id" et non "_id".
 				article : this.collection.get(idArticle)
 			});
 
