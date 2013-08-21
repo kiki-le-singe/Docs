@@ -11,8 +11,8 @@ define([
     model: ArticleModel,
 
     url: function() {
-      return '/server/stubs/article.json';
-      // return '/articles';
+      // return '/server/stubs/article.json';
+      return '/articles';
     }
   });
 

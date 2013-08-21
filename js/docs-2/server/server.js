@@ -19,7 +19,7 @@ app.configure(function() {
   app.use(app.router);
 
   // where to serve static content
-  app.use(express.static(path.join(application_root, 'site')));
+  app.use(express.static(path.join(application_root, '../')));
 
   //show all errors in development
   app.use(express.errorHandler({dumpExceptions: true, showStack: true}));
@@ -40,15 +40,13 @@ mongoose.connect('mongodb://localhost/docs_database');
 
 // Schemas
 var Menu = new mongoose.Schema({
-  id: Number,
   title: String,
   imgSrc: String,
   path: String
 });
 
 var Article = new mongoose.Schema({
-  pid: Number,
-  id : Number,
+  pid: String,
   title : String,
   text : String,
   created: Date,
@@ -67,7 +65,10 @@ app.get('/api', function(request, response) {
   response.send('DOCS is running');
 });
 
-// Get a list of
+/**
+ * Menus
+ */
+// Get a list of menu items
 app.get('/menus', function(request, response) {
   return MenuModel.find(function(err, menus) {
     if (!err) {
@@ -76,3 +77,78 @@ app.get('/menus', function(request, response) {
     return console.log(err);
   });
 });
+
+// Insert a new menu item.
+app.post('/menus', function(request, response) {
+  var menu = new MenuModel({
+    title: request.body.title,
+    imgSrc: request.body.imgSrc,
+    path: request.body.path
+  });
+
+  menu.save(function(err){
+    if (!err) {
+      return console.log('created menu item');
+    }
+    return console.log(err);
+  });
+
+  return response.send(menu);
+});
+
+// jQuery.post('/menus', {
+//   'title': 'PHP',
+//   'imgSrc': 'images/menu/php.jpg',
+//   'path': 'php'
+// }, function(data, textStatus, jqXHR) {
+//     console.log('POST response:');
+//     console.dir(data);
+//     console.log(textStatus);
+//     console.dir(jqXHR)
+// });
+
+/**
+ * Articles
+ */
+// Get a list of articles
+app.get('/articles', function(request, response) {
+  return ArticleModel.find(function(err, articles) {
+    if (!err) {
+      return response.send(articles);
+    }
+    return console.log(err);
+  });
+});
+
+// Insert a new article.
+app.post('/articles', function(request, response) {
+  var article = new ArticleModel({
+    pid: request.body.pid,
+    title: request.body.title,
+    text: request.body.text,
+    created: request.body.created,
+    changed: request.body.changed
+  });
+
+  article.save(function(err){
+    if (!err) {
+      return console.log('created article');
+    }
+    return console.log(err);
+  });
+
+  return response.send(article);
+});
+
+// jQuery.post('/articles', {
+//   'pid': "52151e31152118890b000001",
+//   'title': 'PHP 1',
+//   'text': 'PHP 1',
+//   'created': new Date(2013, 8, 21).getTime(),
+//   'changed': new Date(2013, 8, 21).getTime()
+// }, function(data, textStatus, jqXHR) {
+//     console.log('POST response:');
+//     console.dir(data);
+//     console.log(textStatus);
+//     console.dir(jqXHR)
+// });

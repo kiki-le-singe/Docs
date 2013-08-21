@@ -11,8 +11,8 @@ define([
     model: MenuModel,
 
     url: function() {
-      return '/server/stubs/menu.json';
-      // return '/menus';
+      // return '/server/stubs/menu.json';
+      return '/menus';
     }
   });
 
