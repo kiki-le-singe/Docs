@@ -1,3 +1,22 @@
 - Essayer d'éviter de requêté deux fois l'article.json, donc peut-être appeler articleView directement et pas articlesView. Donc faut passer la collection à la vue ArticleView et faire un this.collection.get(idArticle) dans la vue ArticleView.js
 
-Dans le router afficher le titre de l'article formatté blabla-blabla ??
+- Dans le router afficher le titre de l'article formatté blabla-blabla ??
+
+########
+# Auth #
+########
+- Create special router for users :
+	- “/signup” : create a new user.
+	- “/login” : check the user authentication.
+	- “/profile” : is the route that only registered and authenticated user can access it.
+	- "/actions" : is the route that only the superadmin user can access it.
+
+@see : 
+- http://passportjs.org/
+	Authentication for Node.js and used by twitter.
+	Tutos : 
+		- http://danialk.github.io/blog/2013/02/23/authentication-using-passportjs/
+		- http://bytesofpi.com/post/21137013778/simple-twitter-user-authentication-with-node-js
+OR
+- Custom:
+	If this choice is taken, so use https://npmjs.org/package/jshashes or https://npmjs.org/package/hash for hash the password.
