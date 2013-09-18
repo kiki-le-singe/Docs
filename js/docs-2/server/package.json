@@ -1,7 +1,13 @@
 {
-  "name": "Docs-Tutorials",
-  "version": "0.0.1",
-  "description": "Docs/Tutorials application using Backbone",
+  "name": "Docs-Tutorials-server",
+  "version": "0.1.1",
+  "author": {
+    "name": "Kiki le singe"
+  },
+  "description": "npm install server modules",
+  "engines": {
+    "node": ">= 0.10.12"
+  },
   "dependencies": {
     "express": "~3.3.5",
     "path": "~0.4.9",
