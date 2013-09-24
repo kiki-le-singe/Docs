@@ -2,6 +2,18 @@
 
 - Dans le router afficher le titre de l'article formatté blabla-blabla ??
 
+
+#########
+# Grunt #
+#########
+- Créer les tâches Grunt : uglify, compress, copy...
+
+#########
+# Tests #
+#########
+- Voir l'attribut jasmine:src, dans la doc, dans Gruntfile.js
+- Créer des tests sur les scripts existants
+
 ########
 # Auth #
 ########
